@@ -119,11 +119,14 @@ export default function App() {
 
       {/* ── photo (max 1200px, full bleed top) ── */}
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        <img
-          src="/foto.jpg"
-          alt="5letters puzzelblad op een tafel"
-          style={{ width: '100%', display: 'block' }}
-        />
+        <picture>
+          <source media="(max-width: 768px)" srcSet="/foto_mobile.jpg" />
+          <img
+            src="/foto.jpg"
+            alt="5letters puzzelblad op een tafel"
+            style={{ width: '100%', display: 'block' }}
+          />
+        </picture>
       </div>
 
       {/* ── content column (max 600px) ── */}
