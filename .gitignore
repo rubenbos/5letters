@@ -35,6 +35,11 @@ dist-ssr
 # Local dev scripts
 dev.sh
 
+# Env files (may contain secrets)
+.env
+.env.local
+.env.*.local
+
 # Vite scaffold leftovers
 src/App.css
 src/assets/
