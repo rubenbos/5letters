@@ -139,8 +139,8 @@ export default function App() {
         </div>
         <p style={{ margin: '0 0 48px', fontSize: 15, lineHeight: 1.8, color: '#222' }}>
           5letters is de papieren versie van het bekende Wordle. Leuk voor in de klas,
-          of om thuis zonder telefoon te kunnen puzzelen. Kies zelf woorden, of laat
-          het systeem willekeurige woorden kiezen, en download als PDF.
+          of om thuis zonder telefoon te kunnen puzzelen. Maak een downloadbare PDF met
+          onze voorgeselecteerde woordenlijst of kies zelf welke woorden.
         </p>
 
         {/* ── mode tabs ── */}
@@ -208,7 +208,7 @@ export default function App() {
           <div style={{ marginBottom: 28 }}>
             <p style={{ margin: '0 0 10px', fontSize: 13, color: '#888', lineHeight: 1.6 }}>
               Zet elk woord op een nieuwe regel.
-              Elk woord moet precies <strong>5 letters</strong> zijn met <strong>geen dubbele letters</strong>.
+              Elk woord moet precies <strong>5 letters</strong> zijn en mag <strong>geen dubbele letters</strong> bevatten.
             </p>
             <textarea
               value={customInput}
