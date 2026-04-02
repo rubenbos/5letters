@@ -134,13 +134,14 @@ export default function App() {
             5letters
           </h1>
           <p style={{ margin: 0, fontSize: 16, color: '#888', fontStyle: 'italic', lineHeight: 1 }}>
-            Offline woordpuzzels om uit te printen.
+            een papieren versie van het bekende Wordle
           </p>
         </div>
         <p style={{ margin: '0 0 48px', fontSize: 15, lineHeight: 1.8, color: '#222' }}>
-          5letters is de papieren versie van het bekende Wordle. Leuk voor in de klas,
-          of om thuis zonder telefoon te kunnen puzzelen. Maak een downloadbare PDF met
-          onze voorgeselecteerde woordenlijst of kies zelf welke woorden.
+          Offline woordpuzzels om uit te printen. Leuk voor in de klas, of om thuis
+          zonder telefoon te kunnen puzzelen. Je kan de letters controleren met de
+          codetabel. Maak een downloadbare PDF met onze voorgeselecteerde woordenlijst
+          of kies zelf welke woorden.
         </p>
 
         {/* ── mode tabs ── */}
