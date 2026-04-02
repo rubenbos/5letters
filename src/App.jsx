@@ -298,11 +298,10 @@ export default function App() {
       <footer style={{ borderTop: '1px solid #f0f0f0', marginTop: 0 }}>
         <div style={{ maxWidth: 600, margin: '0 auto', padding: '18px 24px 36px' }}>
           <p style={{ margin: 0, fontSize: 13, color: '#ccc', fontFamily: SANS, lineHeight: 1.5 }}>
-            Offline, Ad-Free, Kids-friendly puzzling, hosted by{' '}
-            <a
-              href="https://strook.blog"
-              style={{ color: '#ccc', textDecorationColor: '#ddd' }}
-            >
+            <a href="https://potlood.app" style={{ color: '#bbb', textDecoration: 'none', fontWeight: 600 }}>potlood.app</a>
+            {' · '}
+            Offline, ad-free, kids-friendly stuff, by{' '}
+            <a href="https://strook.blog" style={{ color: '#ccc', textDecorationColor: '#ddd' }}>
               Ruben Bos
             </a>.
           </p>
