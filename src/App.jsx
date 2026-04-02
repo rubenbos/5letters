@@ -142,9 +142,9 @@ export default function App() {
         </div>
         <p style={{ margin: '0 0 48px', fontSize: 15, lineHeight: 1.8, color: '#222' }}>
           Offline woordpuzzels om uit te printen. Leuk voor in de klas, of om thuis
-          zonder telefoon te kunnen puzzelen. Je kan de letters controleren met de
-          codetabel. Maak een downloadbare PDF met onze voorgeselecteerde woordenlijst
-          of kies zelf welke woorden.
+          zonder telefoon te kunnen puzzelen. Maak een downloadbare PDF met onze
+          voorgeselecteerde woordenlijst of kies zelf welke woorden. Je kan de letters
+          controleren met de codetabel.
         </p>
 
         {/* ── mode tabs ── */}
