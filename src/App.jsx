@@ -137,7 +137,7 @@ export default function App() {
             5letters
           </h1>
           <p style={{ margin: 0, fontSize: 16, color: '#888', fontStyle: 'italic', lineHeight: 1 }}>
-            een papieren versie van het bekende Wordle
+            een papieren versie van het bekende woordspel
           </p>
         </div>
         <p style={{ margin: '0 0 48px', fontSize: 15, lineHeight: 1.8, color: '#222' }}>

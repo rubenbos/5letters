@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   page: {
     padding: 20,
     backgroundColor: '#f5f0e8',
-    fontFamily: 'Times-Roman',
+    fontFamily: 'Courier',
     fontSize: 9,
   },
   cardsRow: {
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   cell: {
     width: 42,
-    height: 22,
+    height: 28,
     borderWidth: 0.75,
     borderColor: '#999',
     borderStyle: 'solid',
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#333',
     color: 'white',
     fontFamily: 'Courier-Bold',
-    fontSize: 7,
+    fontSize: 8,
     textAlign: 'center',
   },
   tableNumCell: {
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     paddingBottom: 1,
     textAlign: 'center',
     fontFamily: 'Courier',
-    fontSize: 7,
+    fontSize: 8,
   },
 
   // Uitlegvak
@@ -122,8 +122,8 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   explHeading: {
-    fontFamily: 'Times-Bold',
-    fontSize: 9,
+    fontFamily: 'Courier-Bold',
+    fontSize: 7,
     marginBottom: 5,
   },
   explIntro: {
@@ -141,6 +141,12 @@ const styles = StyleSheet.create({
     fontSize: 7,
     textDecoration: 'underline',
   },
+  pageFooter: {
+    marginTop: 8,
+    textAlign: 'center',
+    fontSize: 7,
+    color: '#888',
+  },
 });
 
 function PCardPDF({ p }) {
@@ -148,7 +154,7 @@ function PCardPDF({ p }) {
     <View style={styles.card}>
       <Text style={styles.cardNum}>{p.num}</Text>
       <View style={{ alignItems: 'center', marginBottom: 6 }}>
-        {Array.from({ length: 7 }, (_, r) => (
+        {Array.from({ length: 6 }, (_, r) => (
           <View key={r} style={styles.gridRow}>
             {Array.from({ length: 5 }, (_, c) => (
               <View key={c} style={styles.cell} />
@@ -160,8 +166,9 @@ function PCardPDF({ p }) {
         {chunk(p.clues, 13).map((row, i) => (
           <Text key={i} style={styles.clueRow}>
             {row.map((n, j) => (
-              <Text key={j} style={p.ul.has(n) ? styles.clueKeyword : styles.clueNormal}>
-                {j > 0 ? ' ' : ''}{n}
+              <Text key={j}>
+                {j > 0 ? <Text style={styles.clueNormal}> </Text> : null}
+                <Text style={p.ul.has(n) ? styles.clueKeyword : styles.clueNormal}>{n}</Text>
               </Text>
             ))}
           </Text>
@@ -197,9 +204,9 @@ function CodeTable({ table }) {
 function ExplanationBox() {
   return (
     <View style={styles.explBox}>
-      <Text style={styles.explHeading}>Hoe werkt de puzzel?</Text>
+      <Text style={styles.explHeading}>HOE WERKT DE PUZZEL?</Text>
       <Text style={styles.explIntro}>
-        Elk woord bestaat uit 5 verschillende letters, letters komen nooit 2x voor in hetzelfde woord. Raad het woord in maximaal 7 beurten.
+        Het woord bestaat altijd uit 5 verschillende letters. Je mag wel woorden met dezelfde letters invullen voor het raden, maar letters komen nooit 2x voor in hetzelfde woord.
       </Text>
       <Text style={styles.explStep}>1)  Vul een woord in.</Text>
       <Text style={styles.explStep}>2)  Zoek de letter op in de codetabel.</Text>
@@ -232,6 +239,7 @@ export default function PuzzlePDF({ groups }) {
             <CodeTable table={group.table} />
             <ExplanationBox />
           </View>
+          <Text style={styles.pageFooter}>Maak 5-letterwoorden op https://potlood.app</Text>
         </Page>
       ))}
     </Document>
