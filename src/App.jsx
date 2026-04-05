@@ -98,11 +98,13 @@ export default function App() {
   function generateRandom() {
     if (wordBank.length < count) return;
     setGroups(buildGroups(shuffled(wordBank).slice(0, count)));
+    window.sa_event?.('generate_random', { words: count });
   }
 
   function generateCustom() {
     if (validWords.length === 0 || hasErrors) return;
     setGroups(buildGroups(validWords));
+    window.sa_event?.('generate_custom', { words: validWords.length });
   }
 
   // Reset PDF when mode or inputs change
@@ -269,6 +271,7 @@ export default function App() {
               {({ loading }) => (
                 <button
                   disabled={loading}
+                  onClick={() => !loading && window.sa_event?.('download_pdf', { mode, words: mode === 'random' ? count : validWords.length })}
                   style={{
                     padding: '10px 28px',
                     background: loading ? '#bbb' : '#2563eb',
